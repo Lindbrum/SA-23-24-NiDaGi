@@ -1,0 +1,30 @@
+services:
+  config-server:
+    build: ./config-server
+    ports:
+      - "8888:8888"
+    restart: on-failure
+
+  gateway:
+    build: ./gateway
+    ports:
+      - "8080:8080"
+    environment:
+      CONFIG_SERVER_HOST: config-server
+      CONFIG_SERVER_PORT: 8888
+    depends_on:
+      - config-server
+    restart: on-failure
+
+  attraction-reservation-microservice:
+    build: ./attraction-reservation
+    ports:
+      - "8081:8081"
+    environment:
+      CONFIG_SERVER_HOST: config-server
+      CONFIG_SERVER_PORT: 8888
+    depends_on:
+      - config-server
+    restart: on-failure
+volumes:
+  bet-prototype:
