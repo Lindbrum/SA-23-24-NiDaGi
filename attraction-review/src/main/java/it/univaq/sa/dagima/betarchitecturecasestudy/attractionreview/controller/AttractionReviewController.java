@@ -1,5 +1,6 @@
 package it.univaq.sa.dagima.betarchitecturecasestudy.attractionreview.controller;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,16 +26,16 @@ public class AttractionReviewController {
 	public AttractionReviewController() {
 		//hardcoded data
 		reviews.addAll(List.of(
-				new AttractionReview(currID++, 0, 0, 5, "This is a review from user 0 on attraction 0."),
-				new AttractionReview(currID++, 0, 1, 4, "This is a review from user 0 on attraction 1."),
-				new AttractionReview(currID++, 0, 2, 5, "This is a review from user 0 on attraction 2."),
-				new AttractionReview(currID++, 0, 3, 5, "This is a review from user 0 on attraction 3."),
-				new AttractionReview(currID++, 0, 4, 5, "This is a review from user 0 on attraction 4."),
-				new AttractionReview(currID++, 1, 0, 5, "This is a review from user 1 on attraction 0."),
-				new AttractionReview(currID++, 1, 1, 5, "This is a review from user 1 on attraction 1."),
-				new AttractionReview(currID++, 1, 2, 5, "This is a review from user 1 on attraction 2."),
-				new AttractionReview(currID++, 1, 3, 5, "This is a review from user 1 on attraction 3."),
-				new AttractionReview(currID++, 1, 4, 5, "This is a review from user 1 on attraction 4.")
+				new AttractionReview(currID++, 0, 0, 5, "This is a review from user 0 on attraction 0.", LocalDateTime.now()),
+				new AttractionReview(currID++, 0, 1, 4, "This is a review from user 0 on attraction 1.", LocalDateTime.now()),
+				new AttractionReview(currID++, 0, 2, 5, "This is a review from user 0 on attraction 2.", LocalDateTime.now()),
+				new AttractionReview(currID++, 0, 3, 5, "This is a review from user 0 on attraction 3.", LocalDateTime.now()),
+				new AttractionReview(currID++, 0, 4, 5, "This is a review from user 0 on attraction 4.", LocalDateTime.now()),
+				new AttractionReview(currID++, 1, 0, 5, "This is a review from user 1 on attraction 0.", LocalDateTime.now()),
+				new AttractionReview(currID++, 1, 1, 5, "This is a review from user 1 on attraction 1.", LocalDateTime.now()),
+				new AttractionReview(currID++, 1, 2, 5, "This is a review from user 1 on attraction 2.", LocalDateTime.now()),
+				new AttractionReview(currID++, 1, 3, 5, "This is a review from user 1 on attraction 3.", LocalDateTime.now()),
+				new AttractionReview(currID++, 1, 4, 5, "This is a review from user 1 on attraction 4.", LocalDateTime.now())
 		));
 	}
 	
@@ -74,7 +75,7 @@ public class AttractionReviewController {
 	@PostMapping("/add/{id}")
 	public ResponseEntity<String> getReviews(@PathVariable(value = "id") Integer id, @RequestBody() AddReviewPayload review){
 
-		reviews.add(new AttractionReview(currID++, id, review.userId(), review.rating(), review.body()));
+		reviews.add(new AttractionReview(currID++, id, review.userId(), review.rating(), review.body(), LocalDateTime.now()));
 		return new ResponseEntity<>("OK", HttpStatus.OK);
 	}
 }
