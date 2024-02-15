@@ -1,5 +1,7 @@
 package it.univaq.sa.dagima.betarchitecturecasestudy.attractionreview.model;
 
+import java.time.LocalDateTime;
+
 public class AttractionReview {
 	
 	private int id;
@@ -11,16 +13,19 @@ public class AttractionReview {
 	private int rating;
 	
 	private String body;
+	
+	private LocalDateTime timestamp;
 
 	public AttractionReview() {}
 	
-	public AttractionReview(int id, int attractionId, int userId, int rating, String body) {
+	public AttractionReview(int id, int attractionId, int userId, int rating, String body, LocalDateTime timestamp) {
 		super();
 		this.id = id;
 		this.attractionId = attractionId;
 		this.userId = userId;
 		this.rating = rating;
 		this.body = body;
+		this.timestamp = timestamp;
 	}
 
 	public int getId() {
@@ -61,6 +66,14 @@ public class AttractionReview {
 
 	public void setBody(String body) {
 		this.body = body;
+	}
+
+	public LocalDateTime getTimestamp() {
+		return timestamp;
+	}
+
+	public void setTimestamp(LocalDateTime timestamp) {
+		this.timestamp = timestamp;
 	}
 	
 	
