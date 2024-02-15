@@ -26,5 +26,17 @@ services:
     depends_on:
       - config-server
     restart: on-failure
+
+  attraction-review-microservice:
+    build: ./attraction-review
+    ports:
+      - "8082:8082"
+    environment:
+      CONFIG_SERVER_HOST: config-server
+      CONFIG_SERVER_PORT: 8888
+    depends_on:
+      - config-server
+    restart: on-failure
+
 volumes:
   bet-prototype:
