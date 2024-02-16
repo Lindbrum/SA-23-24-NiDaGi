@@ -4,6 +4,8 @@ import java.time.LocalTime;
 
 public class TimeSlot {
 	
+	private Integer id;
+	
 	private int attractionId;
 	
 	private LocalTime start;
@@ -14,8 +16,8 @@ public class TimeSlot {
 	
 	public TimeSlot() {}
 
-	public TimeSlot(int attractionId, LocalTime start, LocalTime end, int availability) {
-		super();
+	public TimeSlot(Integer id, int attractionId, LocalTime start, LocalTime end, int availability) {
+		this.id = id;
 		this.attractionId = attractionId;
 		this.start = start;
 		this.end = end;
@@ -23,6 +25,14 @@ public class TimeSlot {
 	}
 
 	
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
 	public int getAttractionId() {
 		return attractionId;
