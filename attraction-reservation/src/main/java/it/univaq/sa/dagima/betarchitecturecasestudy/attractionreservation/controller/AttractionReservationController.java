@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -141,11 +142,20 @@ public class AttractionReservationController {
 	@PutMapping("/{id}")
 	public ResponseEntity<String> registerReservation(@PathVariable(value = "id") Integer id, @RequestBody() ReservationPayload reservation){
 		//parse into LocalTime
-		LocalTime slotStart = LocalTime.parse(reservation.slotStart(), DateTimeFormatter.ofPattern("H:mm"));
+		String attractionName="";
+		LocalTime slotStart = LocalTime.parse(reservation.slotStart(), DateTimeFormatter.ofPattern("H:mm:ss"));
+		for(Attraction n: attractions ){
+			if(n.getId()==id){
+				attractionName=n.getName();
+
+				break;
+			}
+
+		}
 		for(TimeSlot t : timeSlots) {
 			if(t.getAttractionId() == id && t.getStart().equals(slotStart)) {
 				t.setAvailability(t.getAvailability() - 1);
-				reservations.add(new AttractionReservation(currResID++, id, reservation.userId(), slotStart, LocalDateTime.now()));
+				reservations.add(new AttractionReservation(currResID++, id, reservation.userId(), slotStart, LocalDateTime.now(), attractionName));
 				break;
 			}
 		}

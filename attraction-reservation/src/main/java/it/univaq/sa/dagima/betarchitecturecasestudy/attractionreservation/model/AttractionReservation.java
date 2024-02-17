@@ -7,15 +7,17 @@ public class AttractionReservation {
 
 	private int id;
 	private int attractionId;
+	private String name;
 	private int userId;
 	private LocalTime slotStart;
 	private LocalDateTime timestamp;
 	
 	public AttractionReservation() {}
 	
-	public AttractionReservation(int id, int attractionId, int userId, LocalTime slotStart, LocalDateTime timestamp) {
+	public AttractionReservation(int id, int attractionId, int userId, LocalTime slotStart, LocalDateTime timestamp, String name) {
 		this.id = id;
 		this.attractionId = attractionId;
+		this.name=name;
 		this.userId = userId;
 		this.slotStart = slotStart;
 		this.timestamp = timestamp;
@@ -27,6 +29,14 @@ public class AttractionReservation {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public String getAttractionName() {
+		return name;
+	}
+
+	public void setAttractionName(String name) {
+		this.name = name;
 	}
 
 	public int getAttractionId() {
