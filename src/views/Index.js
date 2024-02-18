@@ -75,7 +75,7 @@ const Index = (props) => {
                     <h6 className="text-uppercase text-light ls-1 mb-1">
                       Overview
                     </h6>
-                    <h2 className="text-white mb-0">Sales value</h2>
+                    <h2 className="text-white mb-0">Real Time Visitors</h2>
                   </div>
                   <div className="col">
                     <Nav className="justify-content-end" pills>
@@ -125,10 +125,8 @@ const Index = (props) => {
               <CardHeader className="bg-transparent">
                 <Row className="align-items-center">
                   <div className="col">
-                    <h6 className="text-uppercase text-muted ls-1 mb-1">
-                      Performance
-                    </h6>
-                    <h2 className="mb-0">Total orders</h2>
+                   
+                    <h2 className="mb-0">New visitors Stats</h2>
                   </div>
                 </Row>
               </CardHeader>
@@ -150,7 +148,7 @@ const Index = (props) => {
               <CardHeader className="border-0">
                 <Row className="align-items-center">
                   <div className="col">
-                    <h3 className="mb-0">Page visits</h3>
+                    <h3 className="mb-0">Attraction visits</h3>
                   </div>
                   <div className="col text-right">
                     <Button
@@ -170,12 +168,12 @@ const Index = (props) => {
                     <th scope="col">Page name</th>
                     <th scope="col">Visitors</th>
                     <th scope="col">Unique users</th>
-                    <th scope="col">Bounce rate</th>
+                    <th scope="col">Interest rate</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">/argon/</th>
+                    <th scope="row">Rollercoaster</th>
                     <td>4,569</td>
                     <td>340</td>
                     <td>
@@ -183,7 +181,7 @@ const Index = (props) => {
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">/argon/index.html</th>
+                    <th scope="row">Tower</th>
                     <td>3,985</td>
                     <td>319</td>
                     <td>
@@ -192,7 +190,7 @@ const Index = (props) => {
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">/argon/charts.html</th>
+                    <th scope="row">Hammer</th>
                     <td>3,513</td>
                     <td>294</td>
                     <td>
@@ -201,22 +199,14 @@ const Index = (props) => {
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">/argon/tables.html</th>
+                    <th scope="row">Crash cars</th>
                     <td>2,050</td>
                     <td>147</td>
                     <td>
                       <i className="fas fa-arrow-up text-success mr-3" /> 50,87%
                     </td>
                   </tr>
-                  <tr>
-                    <th scope="row">/argon/profile.html</th>
-                    <td>1,795</td>
-                    <td>190</td>
-                    <td>
-                      <i className="fas fa-arrow-down text-danger mr-3" />{" "}
-                      46,53%
-                    </td>
-                  </tr>
+                 
                 </tbody>
               </Table>
             </Card>

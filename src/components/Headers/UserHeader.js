@@ -27,7 +27,7 @@ const UserHeader = () => {
         style={{
           minHeight: "600px",
           backgroundImage:
-            "url(" + require("../../assets/img/theme/profile-cover.jpg") + ")",
+            "url(" + require("../../assets/fonts/nidagi.jpeg") + ")",
           backgroundSize: "cover",
           backgroundPosition: "center top",
         }}
@@ -40,8 +40,7 @@ const UserHeader = () => {
             <Col lg="7" md="10">
               <h1 className="display-2 text-white">Hello Jesse</h1>
               <p className="text-white mt-0 mb-5">
-                This is your profile page. You can see the progress you've made
-                with your work and manage your projects or assigned tasks
+                This is your profile page. Here you can edit your profile and can see the list of reservations.
               </p>
               <Button
                 color="info"
