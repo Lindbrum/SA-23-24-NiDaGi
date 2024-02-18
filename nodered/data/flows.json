@@ -1,0 +1,1008 @@
+[
+    {
+        "id": "a89c16236c9cf65a",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "36b0be6da5526355",
+        "type": "junction",
+        "z": "a89c16236c9cf65a",
+        "x": 720,
+        "y": 460,
+        "wires": [
+            [
+                "20c6755dd7d9e46c",
+                "e78d02afc2963f92"
+            ]
+        ]
+    },
+    {
+        "id": "a95ce83f2b34c38f",
+        "type": "junction",
+        "z": "a89c16236c9cf65a",
+        "x": 720,
+        "y": 560,
+        "wires": [
+            [
+                "6532d7040f75c257",
+                "dd795fa292106a8f"
+            ]
+        ]
+    },
+    {
+        "id": "ebcca54a3f06b9ae",
+        "type": "junction",
+        "z": "a89c16236c9cf65a",
+        "x": 720,
+        "y": 680,
+        "wires": [
+            [
+                "8a7186ba9371eac7",
+                "9d2b9f39c83d700b"
+            ]
+        ]
+    },
+    {
+        "id": "0467a69ecb8ab0fe",
+        "type": "junction",
+        "z": "a89c16236c9cf65a",
+        "x": 720,
+        "y": 800,
+        "wires": [
+            [
+                "a035dc2694789895",
+                "b991696f5dfe3320"
+            ]
+        ]
+    },
+    {
+        "id": "30037f4b8ae800d5",
+        "type": "junction",
+        "z": "a89c16236c9cf65a",
+        "x": 720,
+        "y": 920,
+        "wires": [
+            [
+                "a279126da9b333f5",
+                "973775e093d56dda"
+            ]
+        ]
+    },
+    {
+        "id": "9b8271d0d1626678",
+        "type": "mqtt-broker",
+        "name": "dockerized broker",
+        "broker": "172.30.0.100",
+        "port": "1883",
+        "clientid": "node-red",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "/nodered/connected",
+        "birthQos": "0",
+        "birthRetain": "true",
+        "birthPayload": "true",
+        "birthMsg": {},
+        "closeTopic": "/nodered/connected",
+        "closeQos": "0",
+        "closeRetain": "true",
+        "closePayload": "false",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "211591a19ad06bdd",
+        "type": "ui_tab",
+        "name": "Amusement park",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "b395ca42329235c2",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "7cc26d2e97e2a0b8",
+        "type": "ui_group",
+        "name": "Attraction queues",
+        "tab": "211591a19ad06bdd",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "3d168479d637a188",
+        "type": "ui_group",
+        "name": "General",
+        "tab": "211591a19ad06bdd",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f992d936333749ab",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "database",
+        "name": "Influxdb",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "http://172.30.0.113:8086",
+        "timeout": "10",
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "5fb58a16ad56520e",
+        "type": "mqtt in",
+        "z": "a89c16236c9cf65a",
+        "name": "",
+        "topic": "/sensors/visitors",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "9b8271d0d1626678",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 120,
+        "wires": [
+            [
+                "55eb040c65bed7c7"
+            ]
+        ]
+    },
+    {
+        "id": "55eb040c65bed7c7",
+        "type": "function",
+        "z": "a89c16236c9cf65a",
+        "name": "replace single quotes with double quotes",
+        "func": "msg.payload = msg.payload.replace(/'/ig, '\\\"');\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 120,
+        "wires": [
+            [
+                "c9e351010a49f326"
+            ]
+        ]
+    },
+    {
+        "id": "c9e351010a49f326",
+        "type": "json",
+        "z": "a89c16236c9cf65a",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 670,
+        "y": 120,
+        "wires": [
+            [
+                "3812974bebd8e464",
+                "9463349a8d7888dc",
+                "7b5364e6347956bc"
+            ]
+        ]
+    },
+    {
+        "id": "3812974bebd8e464",
+        "type": "debug",
+        "z": "a89c16236c9cf65a",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 795,
+        "y": 60,
+        "wires": [],
+        "l": false
+    },
+    {
+        "id": "039cfbcf387aa74f",
+        "type": "ui_gauge",
+        "z": "a89c16236c9cf65a",
+        "name": "",
+        "group": "3d168479d637a188",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Currently in the park",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1080,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "9463349a8d7888dc",
+        "type": "function",
+        "z": "a89c16236c9cf65a",
+        "name": "Read value",
+        "func": "let value = msg.payload.visitors;\nmsg.payload = value;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 850,
+        "y": 180,
+        "wires": [
+            [
+                "039cfbcf387aa74f"
+            ]
+        ]
+    },
+    {
+        "id": "13adaed66389213f",
+        "type": "mqtt in",
+        "z": "a89c16236c9cf65a",
+        "name": "",
+        "topic": "/sensors/attraction/#",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "9b8271d0d1626678",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 340,
+        "wires": [
+            [
+                "6079480c16b13371"
+            ]
+        ]
+    },
+    {
+        "id": "6079480c16b13371",
+        "type": "function",
+        "z": "a89c16236c9cf65a",
+        "name": "replace single quotes with double quotes",
+        "func": "msg.payload = msg.payload.replace(/'/ig, '\\\"');\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 340,
+        "wires": [
+            [
+                "c901bba13776bfd1"
+            ]
+        ]
+    },
+    {
+        "id": "c901bba13776bfd1",
+        "type": "json",
+        "z": "a89c16236c9cf65a",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 670,
+        "y": 340,
+        "wires": [
+            [
+                "bc6440be366e73a1",
+                "aab3698ecfe3eadc"
+            ]
+        ]
+    },
+    {
+        "id": "20c6755dd7d9e46c",
+        "type": "function",
+        "z": "a89c16236c9cf65a",
+        "name": "Read attraction value",
+        "func": "let value = msg.payload.length;\nmsg.payload = value;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 440,
+        "wires": [
+            [
+                "a2d7433f77da6311"
+            ]
+        ]
+    },
+    {
+        "id": "bc6440be366e73a1",
+        "type": "debug",
+        "z": "a89c16236c9cf65a",
+        "name": "debug 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 795,
+        "y": 300,
+        "wires": [],
+        "l": false
+    },
+    {
+        "id": "a2d7433f77da6311",
+        "type": "ui_gauge",
+        "z": "a89c16236c9cf65a",
+        "name": "",
+        "group": "7cc26d2e97e2a0b8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Attraction 0",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1130,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "aab3698ecfe3eadc",
+        "type": "switch",
+        "z": "a89c16236c9cf65a",
+        "name": "Switch on topic",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "/sensors/attraction/0",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/sensors/attraction/1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/sensors/attraction/2",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/sensors/attraction/3",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/sensors/attraction/4",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 5,
+        "x": 520,
+        "y": 680,
+        "wires": [
+            [
+                "36b0be6da5526355"
+            ],
+            [
+                "a95ce83f2b34c38f"
+            ],
+            [
+                "ebcca54a3f06b9ae"
+            ],
+            [
+                "0467a69ecb8ab0fe"
+            ],
+            [
+                "30037f4b8ae800d5"
+            ]
+        ]
+    },
+    {
+        "id": "568ee362a0cd75de",
+        "type": "ui_gauge",
+        "z": "a89c16236c9cf65a",
+        "name": "",
+        "group": "7cc26d2e97e2a0b8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Attraction 1",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1130,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "58748bf9ef6f4012",
+        "type": "ui_gauge",
+        "z": "a89c16236c9cf65a",
+        "name": "",
+        "group": "7cc26d2e97e2a0b8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Attraction 2",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1130,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "a5a1072b2bd4658e",
+        "type": "ui_gauge",
+        "z": "a89c16236c9cf65a",
+        "name": "",
+        "group": "7cc26d2e97e2a0b8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Attraction 3",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1130,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "77669d9d2e4d9002",
+        "type": "ui_gauge",
+        "z": "a89c16236c9cf65a",
+        "name": "",
+        "group": "7cc26d2e97e2a0b8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Attraction 4",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1130,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "ec85e545f0c3fded",
+        "type": "influxdb out",
+        "z": "a89c16236c9cf65a",
+        "influxdb": "f992d936333749ab",
+        "name": "",
+        "measurement": "visitors",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "s",
+        "retentionPolicyV18Flux": "",
+        "org": "SA-23-24",
+        "bucket": "amusement-park",
+        "x": 1180,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "6532d7040f75c257",
+        "type": "function",
+        "z": "a89c16236c9cf65a",
+        "name": "Read attraction value",
+        "func": "let value = msg.payload.length;\nmsg.payload = value;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 540,
+        "wires": [
+            [
+                "568ee362a0cd75de"
+            ]
+        ]
+    },
+    {
+        "id": "8a7186ba9371eac7",
+        "type": "function",
+        "z": "a89c16236c9cf65a",
+        "name": "Read attraction value",
+        "func": "let value = msg.payload.length;\nmsg.payload = value;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 660,
+        "wires": [
+            [
+                "58748bf9ef6f4012"
+            ]
+        ]
+    },
+    {
+        "id": "a035dc2694789895",
+        "type": "function",
+        "z": "a89c16236c9cf65a",
+        "name": "Read attraction value",
+        "func": "let value = msg.payload.length;\nmsg.payload = value;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 780,
+        "wires": [
+            [
+                "a5a1072b2bd4658e"
+            ]
+        ]
+    },
+    {
+        "id": "a279126da9b333f5",
+        "type": "function",
+        "z": "a89c16236c9cf65a",
+        "name": "Read attraction value",
+        "func": "let value = msg.payload.length;\nmsg.payload = value;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 900,
+        "wires": [
+            [
+                "77669d9d2e4d9002"
+            ]
+        ]
+    },
+    {
+        "id": "abb1a575ff022090",
+        "type": "influxdb out",
+        "z": "a89c16236c9cf65a",
+        "influxdb": "f992d936333749ab",
+        "name": "",
+        "measurement": "attraction-0",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "s",
+        "retentionPolicyV18Flux": "",
+        "org": "SA-23-24",
+        "bucket": "amusement-park",
+        "x": 1170,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "a6ec9baf40465d0c",
+        "type": "influxdb out",
+        "z": "a89c16236c9cf65a",
+        "influxdb": "f992d936333749ab",
+        "name": "",
+        "measurement": "attraction-1",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "s",
+        "retentionPolicyV18Flux": "",
+        "org": "SA-23-24",
+        "bucket": "amusement-park",
+        "x": 1170,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "a527d7dd60801ed7",
+        "type": "influxdb out",
+        "z": "a89c16236c9cf65a",
+        "influxdb": "f992d936333749ab",
+        "name": "",
+        "measurement": "attraction-2",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "s",
+        "retentionPolicyV18Flux": "",
+        "org": "SA-23-24",
+        "bucket": "amusement-park",
+        "x": 1170,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "1a2e1bd987bef071",
+        "type": "influxdb out",
+        "z": "a89c16236c9cf65a",
+        "influxdb": "f992d936333749ab",
+        "name": "",
+        "measurement": "attraction-3",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "s",
+        "retentionPolicyV18Flux": "",
+        "org": "SA-23-24",
+        "bucket": "amusement-park",
+        "x": 1170,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "4adab8361b471f14",
+        "type": "influxdb out",
+        "z": "a89c16236c9cf65a",
+        "influxdb": "f992d936333749ab",
+        "name": "",
+        "measurement": "attraction-4",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "s",
+        "retentionPolicyV18Flux": "",
+        "org": "SA-23-24",
+        "bucket": "amusement-park",
+        "x": 1170,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "7b5364e6347956bc",
+        "type": "function",
+        "z": "a89c16236c9cf65a",
+        "name": "Format data for Influx",
+        "func": "let fields = msg.payload;\nfields.timestamp = Date.parse(fields.timestamp);\nfields.visitors = parseInt(fields.visitors);\nlet tags = {\n    topic: msg.topic\n};\nlet influx_payload = [fields, tags];\nmsg.payload = influx_payload;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 120,
+        "wires": [
+            [
+                "ec85e545f0c3fded",
+                "3660c9c96d9f2c83"
+            ]
+        ]
+    },
+    {
+        "id": "3660c9c96d9f2c83",
+        "type": "debug",
+        "z": "a89c16236c9cf65a",
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1015,
+        "y": 140,
+        "wires": [],
+        "l": false
+    },
+    {
+        "id": "e78d02afc2963f92",
+        "type": "function",
+        "z": "a89c16236c9cf65a",
+        "name": "Format data for Influx",
+        "func": "let fields = msg.payload;\nfields.timestamp = Date.parse(fields.timestamp);\nfields.length = parseInt(fields.length);\nlet tags = {\n    topic: msg.topic\n};\nlet influx_payload = [fields, tags];\nmsg.payload = influx_payload;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 480,
+        "wires": [
+            [
+                "abb1a575ff022090",
+                "4b1c7a3c87ab706a"
+            ]
+        ]
+    },
+    {
+        "id": "dd795fa292106a8f",
+        "type": "function",
+        "z": "a89c16236c9cf65a",
+        "name": "Format data for Influx",
+        "func": "let fields = msg.payload;\nfields.timestamp = Date.parse(fields.timestamp);\nfields.length = parseInt(fields.length);\nlet tags = {\n    topic: msg.topic\n};\nlet influx_payload = [fields, tags];\nmsg.payload = influx_payload;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 580,
+        "wires": [
+            [
+                "a6ec9baf40465d0c"
+            ]
+        ]
+    },
+    {
+        "id": "9d2b9f39c83d700b",
+        "type": "function",
+        "z": "a89c16236c9cf65a",
+        "name": "Format data for Influx",
+        "func": "let fields = msg.payload;\nfields.timestamp = Date.parse(fields.timestamp);\nfields.length = parseInt(fields.length);\nlet tags = {\n    topic: msg.topic\n};\nlet influx_payload = [fields, tags];\nmsg.payload = influx_payload;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 700,
+        "wires": [
+            [
+                "a527d7dd60801ed7"
+            ]
+        ]
+    },
+    {
+        "id": "b991696f5dfe3320",
+        "type": "function",
+        "z": "a89c16236c9cf65a",
+        "name": "Format data for Influx",
+        "func": "let fields = msg.payload;\nfields.timestamp = Date.parse(fields.timestamp);\nfields.length = parseInt(fields.length);\nlet tags = {\n    topic: msg.topic\n};\nlet influx_payload = [fields, tags];\nmsg.payload = influx_payload;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 820,
+        "wires": [
+            [
+                "1a2e1bd987bef071"
+            ]
+        ]
+    },
+    {
+        "id": "973775e093d56dda",
+        "type": "function",
+        "z": "a89c16236c9cf65a",
+        "name": "Format data for Influx",
+        "func": "let fields = msg.payload;\nfields.timestamp = Date.parse(fields.timestamp);\nfields.length = parseInt(fields.length);\nlet tags = {\n    topic: msg.topic\n};\nlet influx_payload = [fields, tags];\nmsg.payload = influx_payload;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 940,
+        "wires": [
+            [
+                "4adab8361b471f14"
+            ]
+        ]
+    },
+    {
+        "id": "4b1c7a3c87ab706a",
+        "type": "debug",
+        "z": "a89c16236c9cf65a",
+        "name": "debug 4",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1015,
+        "y": 500,
+        "wires": [],
+        "l": false
+    }
+]
