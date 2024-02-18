@@ -4,6 +4,9 @@ services:
     ports:
       - "8888:8888"
     restart: on-failure
+    networks:
+      my-network:
+        ipv4_address: 172.30.0.101
 
   gateway:
     build: ./gateway
@@ -15,6 +18,9 @@ services:
     depends_on:
       - config-server
     restart: on-failure
+    networks:
+      my-network:
+        ipv4_address: 172.30.0.102
 
   attraction-reservation-microservice:
     build: ./attraction-reservation
@@ -26,6 +32,9 @@ services:
     depends_on:
       - config-server
     restart: on-failure
+    networks:
+      my-network:
+        ipv4_address: 172.30.0.103
 
   attraction-review-microservice:
     build: ./attraction-review
@@ -37,6 +46,9 @@ services:
     depends_on:
       - config-server
     restart: on-failure
+    networks:
+      my-network:
+        ipv4_address: 172.30.0.104
 
   emotional-buttons-microservice:
     build: ./emotional-buttons
@@ -48,6 +60,154 @@ services:
     depends_on:
       - config-server
     restart: on-failure
+    networks:
+      my-network:
+        ipv4_address: 172.30.0.105
+
+  iot-sensors-park-visitors:
+    build: ./iot-infrastructure/sensors/park-visitors
+    image: sensors-park-visitors:latest
+    restart: always
+    environment:
+      - MQTT_IP=172.30.0.100
+      - MQTT_PORT=1883
+    depends_on:
+      - mqtt
+    networks:
+      my-network:
+        ipv4_address: 172.30.0.106
+
+  iot-sensors-attraction-0:
+    build: ./iot-infrastructure/sensors/attraction-0
+    image: attraction-0:latest
+    restart: always
+    environment:
+      - MQTT_IP=172.30.0.100
+      - MQTT_PORT=1883
+    depends_on:
+      - mqtt
+    networks:
+      my-network:
+        ipv4_address: 172.30.0.107
+
+  iot-sensors-attraction-1:
+    build: ./iot-infrastructure/sensors/attraction-1
+    image: attraction-1:latest
+    restart: always
+    environment:
+      - MQTT_IP=172.30.0.100
+      - MQTT_PORT=1883
+    depends_on:
+      - mqtt
+    networks:
+      my-network:
+        ipv4_address: 172.30.0.108
+
+  iot-sensors-attraction-2:
+    build: ./iot-infrastructure/sensors/attraction-2
+    image: attraction-2:latest
+    restart: always
+    environment:
+      - MQTT_IP=172.30.0.100
+      - MQTT_PORT=1883
+    depends_on:
+      - mqtt
+    networks:
+      my-network:
+        ipv4_address: 172.30.0.109
+
+  iot-sensors-attraction-3:
+    build: ./iot-infrastructure/sensors/attraction-3
+    image: attraction-3:latest
+    restart: always
+    environment:
+      - MQTT_IP=172.30.0.100
+      - MQTT_PORT=1883
+    depends_on:
+      - mqtt
+    networks:
+      my-network:
+        ipv4_address: 172.30.0.110
+
+  iot-sensors-attraction-4:
+    build: ./iot-infrastructure/sensors/attraction-4
+    image: attraction-4:latest
+    restart: always
+    environment:
+      - MQTT_IP=172.30.0.100
+      - MQTT_PORT=1883
+    depends_on:
+      - mqtt
+    networks:
+      my-network:
+        ipv4_address: 172.30.0.111
+
+  node-red:
+    restart: always
+    depends_on:
+      - mqtt
+    image: nodered/node-red
+    container_name: node-red
+    ports:
+      - "1880:1880"
+    networks:
+      my-network:
+        ipv4_address: 172.30.0.112
+    volumes:
+      - ./nodered/data:/data
+
+  influxdb:
+    image: influxdb
+    volumes:
+      - ./influxdb/data:/var/lib/influxdb2:rw
+    environment:
+      - DOCKER_INFLUXDB_INIT_MODE=setup
+      - DOCKER_INFLUXDB_INIT_USERNAME=adminadmin
+      - DOCKER_INFLUXDB_INIT_PASSWORD=adminadmin
+      - DOCKER_INFLUXDB_INIT_ORG=SA-23-24
+      - DOCKER_INFLUXDB_INIT_BUCKET=amusement-park
+      - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=ardtyGcZCP_F5qJ7TG9keM6Y0rVkSS9fYNy_AJN-Wk8IQydqA6E-HieWoKm5pCZ9RKB93mK2wOLtMyRsp9vVXQ==
+    restart: on-failure:10
+    ports:
+      - "8086:8086"
+    networks:
+      my-network:
+        ipv4_address: 172.30.0.113
+
+  grafana:
+    restart: always
+    image: grafana/grafana-oss
+    volumes:
+      - ./grafana/data:/var/lib/grafana:rw
+    ports:
+      - 3000:3000
+    networks:
+      my-network:
+        ipv4_address: 172.30.0.114
+    depends_on:
+      - influxdb
+
+  mqtt:
+    image: eclipse-mosquitto
+    container_name: mqtt
+    ports:
+      - "1883:1883"
+    restart: unless-stopped
+    volumes:
+      - ./iot-infrastructure/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf:rw
+    networks:
+      my-network:
+        ipv4_address: 172.30.0.100
+    depends_on:
+      - influxdb
 
 volumes:
   bet-prototype:
+
+
+networks:
+  my-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.30.0.0/16
